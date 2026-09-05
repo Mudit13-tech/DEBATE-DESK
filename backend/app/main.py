@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from debatedesk.backend.app.api.routes.companies import router as companies_router
+
 
 app = FastAPI(
     title = 'Debate-desk',
@@ -24,3 +26,5 @@ def hello(name):
     return {
         "message": f"hello {name}"
     }
+
+app.include_router(companies_router)
